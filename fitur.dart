@@ -149,77 +149,14 @@ void ubahStatus() {
 void tampilkanRekap() {
   // TODO: untuk setiap mahasiswa, hitung berapa kali hadir, izin, sakit, dan alpa
   // dari semua pertemuan.
-  print('\n=== Rekap Absensi ===');
-
-for (final mhs in daftarMahasiswa) {
-  final nim = mhs['nim'] as String;
-
-  int hadir = 0;
-  int izin = 0;
-  int sakit = 0;
-  int alpa = 0;
-
-  for (final data in absensi.values) {
-    final status = data[nim];
-
-    switch (status) {
-      case StatusHadir.hadir:
-        hadir++;
-        break;
-      case StatusHadir.izin:
-        izin++;
-        break;
-      case StatusHadir.sakit:
-        sakit++;
-        break;
-      case StatusHadir.alpa:
-        alpa++;
-        break;
-      default:
-        break;
-    }
-  }
-
-  print('\n${mhs['nim']} | ${mhs['nama']}');
-  print('Hadir : $hadir');
-  print('Izin  : $izin');
-  print('Sakit : $sakit');
-  print('Alpa  : $alpa');
+print('Fitur belum tersedia.');
 }
-}
-
 /// Menu 8 [Sulit]: menampilkan persentase kehadiran setiap mahasiswa.
 void tampilkanPersentase() {
   // TODO: persentase = jumlah hadir / jumlah pertemuan x 100.
   // Tampilkan 1 ang0ka di belakang koma.
-  print('\n=== Persentase Kehadiran ===');
-
-if (absensi.isEmpty) {
-  print('Belum ada data absensi.');
-  return;
+  print('Fitur belum tersedia.');
 }
-
-for (final mhs in daftarMahasiswa) {
-  final nim = mhs['nim'] as String;
-
-  int jumlahHadir = 0;
-
-  for (final data in absensi.values) {
-    if (data[nim] == StatusHadir.hadir) {
-      jumlahHadir++;
-    }
-  }
-
-  final persentase =
-      (jumlahHadir / absensi.length) * 100;
-
-  print(
-    '${mhs['nim']} | ${mhs['nama']} | '
-    '${persentase.toStringAsFixed(1)}%',
-  );
-}
-}
-
 /// Menu 9 [Sulit]: menampilkan mahasiswa dengan kehadiran di bawah batas.
 void tampilkanDiBawahBatas() {
   // TODO: tampilkan mahasiswa yang persentase kehadirannya < batasKehadiran
